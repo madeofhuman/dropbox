@@ -1,5 +1,8 @@
 {
   "name": "dropbox",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "scripts": {
+    "test": "echo 'no tests in js'"
+  }
 }
