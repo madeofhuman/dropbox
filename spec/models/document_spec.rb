@@ -15,7 +15,7 @@ RSpec.describe Document, :type => :model do
       document.file.attach(
         io: File.open(Rails.root.join('spec', 'factories', 'attachments', 'dash_icon.png')),
         filename: 'dash_icon.png',
-        content_type: 'application/pdf'
+        content_type: 'application/png'
       )
       expect(Rails.application.routes.url_helpers.rails_blob_path(document.file, only_path: true)).
         to include(document.file.filename.to_s)
