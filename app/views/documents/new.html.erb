@@ -1,0 +1,22 @@
+<h3>New file</h3>
+
+<%= form_with(model: @document, local: true) do |form| %>
+  <% if @document.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(document.errors.count, "error") %> prohibited this file from being saved:</h2>
+
+      <ul>
+      <% @document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :file %>
+    <%= form.file_field :file, required: true, direct_upload: true %>
+  </div>
+
+  <%= form.submit 'Submit', class: 'btn btn-primary btn-lg' %>
+<% end %>

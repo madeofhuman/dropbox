@@ -1,0 +1,15 @@
+<h3>List of files</h3>
+
+<%= link_to 'Add your file', new_document_path, class: 'btn btn-lg btn-primary' %>
+
+<ul class="row" id="files-list">
+  <% @documents.each do |document| %>
+    <li class="col-xs-3">
+      <%= link_to document.file.filename, url_for(document.file), target: '_blank' %>
+    </li>
+    <li>
+      <%= link_to 'download', rails_blob_url(document.file, disposition: "attachment") %>
+      <%= link_to 'delete', document, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
