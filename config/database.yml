@@ -21,5 +21,4 @@ test:
   database: dropbox_ng_test
 
 production:
-  <<: *default
-  database: dropbox_ng_production
+  url: <%= ENV.fetch('DATABASE_URL') %>
